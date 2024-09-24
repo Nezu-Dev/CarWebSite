@@ -31,6 +31,8 @@ body {
     color: #222;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 
 .navbar a {
@@ -68,19 +70,107 @@ body {
 }
 
 .social-media a:hover {
-    border-color: red;
+    border-color: #eaeaea;
 }
 
 .social-media a i {
     font-size: 24px;
-    color: red;
+    color: #eaeaea;
     transform: rotate(-45deg);
 }
 
 .home {
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 50px 8%;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 630px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    line-height: 1.4;
+}
+
+.home-content h3 {
+    font-size: 40px;
+    color: #1743e3;
+}
+
+.home-content p {
+  font-size: 16px;
+  margin: 15px 0 30px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #1743e3;
+    border: 2px solid #1743e3;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #1743e3;
+}
+
+.home-img {
+    position: relative;
+    right: -7%;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+}
+.home-img .rhombus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #eaeaea;
+    border: 25px solid #1743e3;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+}
+.home-img .rhombus img {
+    position: absolute;
+    top: 110px;
+    left: -250px;
+    max-width: 750px;
+    transform: rotate(-45deg);
+    
+}
+
+.home .rhombus2 {
+   position: absolute;
+   top: -25%;
+   right: -25%;
+   width: 700px;
+   height: 700px;
+   background: #1743e3; 
+   transform: rotate(45deg);
+   z-index: -1;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
